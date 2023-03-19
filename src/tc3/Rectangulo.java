@@ -1,6 +1,6 @@
 package tc3;
 
-public class Rectangulo extends Figura {
+public class Rectangulo extends Figura implements Comparable<Rectangulo> {
 
 	private double base;
 	private double altura;
@@ -47,6 +47,15 @@ public class Rectangulo extends Figura {
 	public int ladosFigura() {
 		
 		return 4;
+	}
+	
+	public String toString() { 
+		
+		double area = this.calcularArea();
+		int lados = this.ladosFigura();
+		String datos = "Area: " + area + " / Lados: " + lados;
+		return datos;
+		
 	}
 	
 }

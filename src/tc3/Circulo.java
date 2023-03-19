@@ -1,6 +1,6 @@
 package tc3;
 
-public class Circulo extends Figura{
+public class Circulo extends Figura implements Comparable<Circulo> {
 
 	private double radio;
 	//private double diametro;
@@ -50,6 +50,15 @@ public int compareTo(Circulo circPorComparar){
 	public int ladosFigura() {
 		
 		return 0;
+	}
+
+	public String toString() { 
+		
+		double area = this.calcularArea();
+		int lados = this.ladosFigura();
+		String datos = "Area: " + area + " / Lados: " + lados;
+		return datos;
+		
 	}
 	
 }

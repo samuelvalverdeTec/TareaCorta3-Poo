@@ -1,6 +1,6 @@
 package tc3;
 
-public class Triangulo extends Figura {
+public class Triangulo extends Figura implements Comparable<Triangulo> {
 
 	private double base;
 	private double altura;
@@ -16,7 +16,7 @@ public class Triangulo extends Figura {
 		return (base*altura)/3;
 	}
 	
-public int compareTo(Triangulo triPorComparar){
+	public int compareTo(Triangulo triPorComparar){
 		
 		double areaPorComparar = triPorComparar.calcularArea();
 		double miArea = this.calcularArea();
@@ -47,6 +47,15 @@ public int compareTo(Triangulo triPorComparar){
 	public int ladosFigura() {
 		
 		return 3;		
+	}
+	
+	public String toString() { 
+		
+		double area = this.calcularArea();
+		int lados = this.ladosFigura();
+		String datos = "Area: " + area + " / Lados: " + lados;
+		return datos;
+		
 	}
 	
 }
